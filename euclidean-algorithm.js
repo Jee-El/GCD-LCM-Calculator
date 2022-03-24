@@ -17,7 +17,7 @@ function gcd(a, b) {
         */
         return a > 0 ? a : -a;
     } else if (a === 0) {
-        // 0 % x = 0 but the positive value of x is the GCD
+        // 0 % x = 0 but the absolute value of x is the GCD
         return b > 0 ? b : -b;
     } else if (a % b === 0) {
         // to end Euclide's algorithm
