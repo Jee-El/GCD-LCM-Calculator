@@ -9,7 +9,7 @@ function gcd(a, b) {
 
     // check if a & b are numbers or check if both are negative or check if both are null
     if (isNaN(a * b) || (a < 0 && b < 0) || (a == 0 && b == 0) ){
-        return `arguments = (a, b) != (0, 0) where both a and b are not negative at the same time`;
+        return `arguments = (a, b) != (0, 0) where either of arguments is positive`;
     } else if (b === 0) {
         /*
         JS's definition of modulo is different than what we're taught at school,
