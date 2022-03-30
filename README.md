@@ -1,5 +1,5 @@
 # Euclidean-algorithm
-**Note:** There is definitely a simpler method to implement it but this is what i've come up with so far. It's 1am so i'll try to improve it later.
+**Note:** There is definitely a simpler method to implement it but this is what i've come up with so far.
 
 ## How to use it
 One way to use it is to copy the function code => press f12 => go to the console panel => paste it there => call it with gcd(a,b)
