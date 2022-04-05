@@ -1,4 +1,4 @@
-# Euclidean-algorithm
+# Euclidean-Algorithm
 **Note:** There is definitely a simpler method to implement it but this is what i've come up with so far.
 
 ## How to use it
