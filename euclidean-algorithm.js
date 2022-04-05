@@ -6,21 +6,28 @@
 
 function GCD(a, b) {
 
-    // Check if a & b are integers, positive, not null.
-    if ( !Number.isInteger(a) || !Number.isInteger(b) || a < 0 || b < 0 || (a == 0 && b == 0) ) {
-        return `the arguments, a & b, should be positive integers and at least one of them is not null`;
-    } else if (b === 0) {
+    // Check if a & b are integers, both not null.
+    if ( !Number.isInteger(a) || !Number.isInteger(b) || (a == 0 && b == 0) ) {
+        return `the arguments, a & b, should be integers and at least one of them is not null`;
+    } 
+    
+    if (a == 0) {
+        // 0 % b = 0 but the absolute value of b is the GCD.
+        return b > 0 ? b : -b;
+    }
+
+    if (b == 0) {
         /*
         JS's definition of modulo is different than what we're taught at school,
         this is to make it align with that.
         */
-        return a > 0 ? a : -a;
-    } else if (a === 0) {
-        // 0 % x = 0 but the absolute value of x is the GCD.
-        return b > 0 ? b : -b;
-    } else if (a % b === 0) {
-        // To end Euclide's algorithm.
-        return a > b ? b : a;
+        return GCD(b, a);
     }
+
+    if (a % b == 0) {
+        // To end Euclide's algorithm.
+        return Math.abs(a) > Math.abs(b) ? Math.abs(b) : Math.abs(a);
+    }
+
     return GCD(b, a % b);
 }
