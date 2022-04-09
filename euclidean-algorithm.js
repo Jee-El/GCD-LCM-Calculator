@@ -4,7 +4,7 @@
 
 // The forward slash meaning "divides".
 
-function GCD(a, b) {
+function findGCD(a, b) {
 
     // Check if a & b are integers, both not null.
     if ( !Number.isInteger(a) || !Number.isInteger(b) || (a == 0 && b == 0) ) {
@@ -21,7 +21,7 @@ function GCD(a, b) {
         JS's definition of modulo is different than what we're taught at school,
         this is to make it align with that.
         */
-        return GCD(b, a);
+        return findGCD(b, a);
     }
 
     if (a % b == 0) {
@@ -29,5 +29,5 @@ function GCD(a, b) {
         return Math.abs(a) > Math.abs(b) ? Math.abs(b) : Math.abs(a);
     }
 
-    return GCD(b, a % b);
+    return findGCD(b, a % b);
 }
