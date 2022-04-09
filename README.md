@@ -1,10 +1,9 @@
 # Euclidean-Algorithm
-**Note:** There is definitely a simpler method to implement it but this is what i've come up with so far.
 
 ## How to use it
-One way to use it is to copy the function code => press f12 => go to the console panel => paste it there => call it with gcd(a,b)
+One way to use it is to copy the function code => press f12 => go to the console panel => paste it there => call it with findGCD(a,b)
 
-e.g: gcd(123, 137)
+**Try** : findGCD(9007199254740991, 7199254740991) . The first argument is the greatest (safe) integer in Javascript, and yet it finds the GCD almost immediately :D.
 
 ## Why I chose Euclide's algorithm
 Ever since we studied the GCD and the Euclidean algorithm at school, I've been wondering about what it would look like in a programming language, that is because I'd often come across the word *algorithm* in programming communities. As I've been learning the basics of javascript lately, I thought I'd try to code it in js.
@@ -18,11 +17,11 @@ Now let's get started with how the algorithm works:
 
 * First, we 'divide' a by b so we get : `a = bq + r`, *now the question is: is r equal to 0 or not?*
 
-    * if r = 0 : `a = bq` => `b/a` => gcd(a, b) = b. The algorithm is done.
+    * if r = 0 : `a = bq` => `b/a` => findGCD(a, b) = b. The algorithm is done.
     
     * if r != 0 : Divide b by r, now we get `b = rq' + r'`. r' and q' are not necessarily equal to q and r respectively.
     
-    *   * r' = 0 : `b = rq'` therefore gcd(b, r) = gcd(a,  b) = r. The equality of gcd(a, b) and gcd(b, r) can be demonstrated but if I were to demonstrate everything it would take quite a lot of text, but if you've read this far, just message me I'm willing to explain everything about it.
+    *   * r' = 0 : `b = rq'` therefore findGCD(b, r) = findGCD(a,  b) = r. The equality of findGCD(a, b) and findGCD(b, r) can be demonstrated but if I were to demonstrate everything it would take quite a lot of text, but if you've read this far, just message me I'm willing to explain everything about it.
     
     *   * r' != 0 : then we repeat the same previous steps until we get a null remainder. The remainder right before that null one is the GCD and is equal to the last quotient of the algorithm (not 'q'), as you can see in the 4th step above.
 
@@ -32,7 +31,7 @@ Oof that was a lot of text, wasn't it? Using modulo or `%` is gonna make it simp
 The algorithm, as explained above, requires at least 4 parameters and we don't want that, who likes having too many parameters anyways? No one. To prevent that, I rewrote the algorithm in modulo expressions as the following :
 * Get the remainder of the divison of a by b : `a % b = r`
 
-    * r = 0, or simply a % b = 0 : gcd(a, b) = b. *Remember that a % b = r is similar to a = bq + r*
+    * r = 0, or simply a % b = 0 : findGCD(a, b) = b. *Remember that a % b = r is similar to a = bq + r*
 
     * a % b != 0 : Calculate b % (a % b). *Remember that a % b = r, so b % r = b % (a % b)*
 
@@ -51,7 +50,7 @@ That gives us `3 % (8 % 3) = 3 % 2 = 1`. The remainder is still not equal to 0. 
 
 We get `(8 % 3) % ( 3 % (8 % 3) ) = ( 8 % 3 ) % 1 = 2 % 1 = 0`. Nice, we finally got to 0! So what's the last non-null remainder here?
 
-It's `1`. Therefore, gcd(8, 3) = 1.
+It's `1`. Therefore, findGCD(8, 3) = 1.
 
 ## Second issue, how am i gonna return the value of the before-last function call?
 Or in other words, how am I gonna get the last non-null remainder? `return` would get me the value of the latest call of the recursive function.
