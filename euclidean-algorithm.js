@@ -1,8 +1,8 @@
 // GCD stands for Greatest Common Divisor
 
 /* Here modulo is defined as : a = r [b] <=> b / a - r . But the modulo operator in js acts differently because, to it, `a % b` means DIVIDE a by b.
-Since dividing by 0 gets us nowhere, `a % 0` would return NaN. Meanwhile, if we follow the first definition, a = r [0] is true and makes sense, although r would have to be equal to a.
-So I wrote an else..if statement to make a % 0 = |a|.
+Since dividing by 0 gets us nowhere, `a % 0` would return NaN. Meanwhile, if we follow the first definition, a = r [0] is true and makes sense,
+although r would have to be equal to a. So I wrote an else..if statement to make a % 0 = |a|.
 */
 
 // The forward slash means "divides".
