@@ -28,7 +28,7 @@ function findGCD(a, b) {
 
     // Check if a & b are integers, both not null.
     if ( !Number.isInteger(a) || !Number.isInteger(b) || (a == 0 && b == 0) ) {
-        return result.textContent = `the arguments, a & b, should be integers and at least one of them is not null`;
+        return result.textContent = `Please enter two integers`;
     } 
     
     if (a == 0) {
