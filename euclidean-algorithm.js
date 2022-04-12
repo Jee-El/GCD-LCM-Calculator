@@ -7,16 +7,33 @@ although r would have to be equal to a. So I wrote an else..if statement to make
 
 // The forward slash means "divides".
 
+const result = document.querySelector('p');
+const submit = document.querySelector('.submit.button');
+const reset = document.querySelector('.reset.button')
+
+submit.addEventListener('click', () => {
+    let firstInput = +document.getElementById('firstInput').value;
+    let secondInput = +document.getElementById('secondInput').value;
+    findGCD(firstInput, secondInput);
+});
+
+reset.addEventListener('click', () => {
+    firstInput.value = '';
+    secondInput.value = '';
+    result.textContent = '';
+})
+
+
 function findGCD(a, b) {
 
     // Check if a & b are integers, both not null.
     if ( !Number.isInteger(a) || !Number.isInteger(b) || (a == 0 && b == 0) ) {
-        return `the arguments, a & b, should be integers and at least one of them is not null`;
+        return result.textContent = `the arguments, a & b, should be integers and at least one of them is not null`;
     } 
     
     if (a == 0) {
         // 0 % b = 0 but the absolute value of b is the GCD.
-        return b > 0 ? b : -b;
+        return result.textContent = b > 0 ? b : -b;
     }
 
     if (b == 0) {
@@ -29,7 +46,7 @@ function findGCD(a, b) {
 
     if (a % b == 0) {
         // To end Euclide's algorithm.
-        return Math.abs(a) > Math.abs(b) ? Math.abs(b) : Math.abs(a);
+        return result.textContent = Math.abs(a) > Math.abs(b) ? Math.abs(b) : Math.abs(a);
     }
 
     return findGCD(b, a % b);
