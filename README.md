@@ -58,6 +58,6 @@ After some thinking, I noticed that the last non-null remainder is also the seco
 Let's go back to the example above. The last call's arguments are 2 and 1, we got 1 from calculating the before-last modulo which was followed by a null remainder, I've also mentioned this in the 2nd section. So now the problem is solved, we just gotta write the code and use `return b;` to get the second argument of the last-call, which is also the GCD.
 
 ## Conclusion
-As small as a repository this might be, I had a lot of fun while trying to make such a functionality. I'll come back later to this repo to improve the code and add more functionalities. I'm also considering adding this function the calculator project I'm gonna make :D.
+As small as a repository this might be, I had a lot of fun while trying to make such a functionality. I'll come back later to this repo to improve the code and add more functionalities. I'm also considering adding this function to the calculator project I'm gonna make :D.
 
 Feel free to message me if there's something that needs clarification!
