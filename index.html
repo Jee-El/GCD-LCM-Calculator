@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fontello.css">
     <title>Greatest Common Divisor</title>
 </head>
 <body>
     <div class="main-container">
-       <div class="sub-container">
-            <p class="result"></p>
+        <h1>Enter one integer in each of the 'integer' fields and get their Greatest Common Divisor.<br><small>E.g. -34 & 238.</small></h1>
+        <div class="sub-container">
+            <p class="result"><span>The GCD will be shown here!</span></p>
 
             <div class="inputs">
                 <input id="firstInput" type="text" placeholder="Integer">
@@ -21,9 +26,13 @@
                 <button class="submit button" type="submit">Find GCD</button>
                 <button class="reset button" type="reset">Reset</button>
             </div>
+        </div>
+        <div class="icons">
+            <a href="https://github.com/Jee-El" target="_blank"><i class="icon-github"></i></a>
+            <a href="https://dribbble.com/Jee-El" target="_blank"><i class="icon-twitter"></i></a>
         </div> 
     </div>
-    
+    <a class="gcd-wiki" href="https://en.wikipedia.org/wiki/Greatest_common_divisor">Learn more about the GCD</a>
     <script src="euclidean-algorithm.js"></script>
 </body>
 </html>
