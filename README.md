@@ -1,7 +1,7 @@
 # Euclidean-Algorithm
 
-## How to use it
-One way to use it is to copy the function code => press f12 => go to the console panel => paste it there => call it with findGCD(a,b)
+## Link
+https://jee-el.github.io/Euclidean-Algorithm/
 
 **Try** : findGCD(9007199254740991, 7199254740991) . The first argument is the greatest (safe) integer in Javascript, and yet it finds the GCD almost immediately :D.
 
