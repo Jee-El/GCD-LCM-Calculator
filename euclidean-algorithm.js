@@ -1,6 +1,6 @@
 // GCD stands for Greatest Common Divisor
 
-/* Here modulo is defined as : a = r [b] <=> b / a - r . But the modulo operator in js acts differently because, to it, `a % b` means DIVIDE a by b.
+/* Here modulo is defined as : a = r [b] <=> b / a - r . That's because the modulo operator in js acts differently; it *divides* a by b if the input is `a % b` then it returns the remainder.
 Since dividing by 0 gets us nowhere, `a % 0` would return NaN. Meanwhile, if we follow the first definition, a = r [0] is true and makes sense,
 although r would have to be equal to a. So I wrote an else..if statement to make a % 0 = |a|.
 */
@@ -12,9 +12,12 @@ const submit = document.querySelector('.submit.button');
 const reset = document.querySelector('.reset.button')
 
 submit.addEventListener('click', () => {
-    let firstInput = +document.getElementById('firstInput').value;
-    let secondInput = +document.getElementById('secondInput').value;
-    findGCD(firstInput, secondInput);
+    const firstInput = document.getElementById('firstInput').value;
+    const secondInput = document.getElementById('secondInput').value;
+    if (firstInput.trim() === '' || secondInput.trim() === '') {
+        return result.textContent = `Please fill both the integer fields`;
+    }
+    findGCD(+firstInput, +secondInput);
 });
 
 reset.addEventListener('click', () => {
@@ -23,31 +26,25 @@ reset.addEventListener('click', () => {
     result.textContent = '';
 })
 
-
 function findGCD(a, b) {
 
     // Check if a & b are integers, both not null.
-    if ( !Number.isInteger(a) || !Number.isInteger(b) || (a == 0 && b == 0) ) {
-        return result.textContent = `Please enter two integers`;
-    } 
+    if ( !Number.isSafeInteger(a) || !Number.isSafeInteger(b)) {
+        return result.textContent = `Please enter two integers smaller than 9007199254740991`;
+    }
     
-    if (a == 0) {
-        // 0 % b = 0 but the absolute value of b is the GCD.
-        return result.textContent = b > 0 ? b : -b;
-    }
+    if ( a === 0 && b === 0) return result.textContent = `At least one integer should be non-null`;
 
-    if (b == 0) {
-        /*
-        JS's definition of modulo is different than what we're taught at school,
-        this is to make it align with that.
-        */
-        return findGCD(b, a);
-    }
+    // 0 % b = 0 but the absolute value of b is the GCD.
+    if (a === 0) return result.textContent = b > 0 ? b : -b;
 
-    if (a % b == 0) {
-        // To end Euclide's algorithm.
+    // Check the second comment above for an explanation of this one.
+    if (b === 0) return findGCD(b, a);
+
+    // To end Euclide's algorithm.
+    if (a % b === 0) {
         return result.textContent = Math.abs(a) > Math.abs(b) ? Math.abs(b) : Math.abs(a);
     }
-
+    
     return findGCD(b, a % b);
 }

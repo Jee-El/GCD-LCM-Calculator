@@ -33,7 +33,7 @@ body {
     border-radius: 10px;
     display: flex;
     flex-flow: column nowrap;
-    height: 320px;
+    height: 380px;
     justify-content: space-between;
     max-width: 400px;
     padding: 2rem;
@@ -75,7 +75,7 @@ h1 {
 }
 
 .result {
-    height: 45px;
+    height: 90px;
 }
 
 input {
