@@ -13,11 +13,11 @@ body, .sub-container, .result, .inputs, .options {
     display: flex;
 }
 
-.inputs, .options {
+.inputs {
     flex-flow: row nowrap;
 }
 
-.sub-container, .inputs, .options {
+.sub-container, .inputs {
     justify-content: space-between;
 }
 
@@ -31,13 +31,13 @@ body {
 .main-container {
     background-color: rgb(33, 33, 82);
     border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 320px;
+    justify-content: space-between;
     max-width: 400px;
     padding: 2rem;
     width: 85%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    height: 400px;
 }
 
 h1 {
@@ -46,12 +46,15 @@ h1 {
     font-weight: 500;
     letter-spacing: 0.03rem;
     line-height: 1.4rem;
+    max-width: 400px;
+    padding: 2rem;
+    text-align: center;
 }
 
 .sub-container {
     flex-flow: column nowrap;
     width: 100%;
-    height: 180px;
+    flex-grow: 1;
 }
 
 .result, input, .button {
@@ -59,7 +62,7 @@ h1 {
     border: 2px solid #6c63ff;
     border-radius: 3px;
     color: #f5f5f5;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 500;
     letter-spacing: 0.1rem;
     justify-content: center;
@@ -67,7 +70,7 @@ h1 {
     text-align: center;
 }
 
-.result, .inputs, .options {
+.result, .inputs {
     width: 100%;
 }
 
@@ -88,15 +91,16 @@ input {
 .submit.button {
     background-color: #6c63ff;
     color: #1A1A40;
+    font-size: 0.9rem;
     font-weight: 700;
-    width: 46%;
+    width: 100%;
 }
 
 .reset.button {
     background-color: transparent;
     color: #6c63ff;
     font-weight: 400;
-    width: 46%;
+    width: 100%;
 }
 
 .icons {
@@ -126,5 +130,5 @@ input {
     text-decoration-line: underline;
     font-size: 0.8rem;
     letter-spacing: 0.03rem;
-    margin-top: 1rem;
+    margin: 1.5rem 0 0.8rem;
 }
