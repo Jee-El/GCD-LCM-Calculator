@@ -17,7 +17,7 @@ submit.addEventListener('click', () => {
     if (firstInput.trim() === '' || secondInput.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
-    findGCD(+firstInput, +secondInput);
+    checkForSafeNonNullInteger(+firstInput, +secondInput);
 });
 
 reset.addEventListener('click', () => {
@@ -26,15 +26,16 @@ reset.addEventListener('click', () => {
     result.textContent = '';
 })
 
-function findGCD(a, b) {
-
+function checkForSafeNonNullInteger(a, b) {
     // Check if a & b are integers, both not null.
     if ( !Number.isSafeInteger(a) || !Number.isSafeInteger(b)) {
-        return result.textContent = `Please enter two integers smaller than 9007199254740991`;
+        return result.textContent = `Input must be two integers, each between -(2^53 - 1) and (2^53 - 1)`;
     }
-    
     if ( a === 0 && b === 0) return result.textContent = `At least one integer should be non-null`;
+    return findGCD(a, b);
+}
 
+function findGCD(a, b) {
     // 0 % b = 0 but the absolute value of b is the GCD.
     if (a === 0) return result.textContent = b > 0 ? b : -b;
 
