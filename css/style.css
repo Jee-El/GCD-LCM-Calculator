@@ -25,7 +25,7 @@ body {
     background-color: #1A1A40;
     flex-flow: column nowrap;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .main-container {
@@ -33,15 +33,15 @@ body {
     border-radius: 10px;
     display: flex;
     flex-flow: column nowrap;
-    height: 380px;
+    height: 350px;
     justify-content: space-between;
     max-width: 400px;
     padding: 2rem;
-    width: 85%;
+    width: 82%;
 }
 
 h1 {
-    color: rgba(245, 245, 245, 0.9);
+    color: rgba(245, 245, 245, 0.8);
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.03rem;
@@ -49,6 +49,7 @@ h1 {
     max-width: 400px;
     padding: 2rem;
     text-align: center;
+    width: 86%;
 }
 
 .sub-container {
@@ -61,8 +62,8 @@ h1 {
     background-color: rgb(33, 33, 82);
     border: 2px solid #6c63ff;
     border-radius: 3px;
-    color: #f5f5f5;
-    font-size: 0.82rem;
+    color: rgba(245, 245, 245, 0.9);
+    font-size: 0.80rem;
     font-weight: 500;
     letter-spacing: 0.1rem;
     justify-content: center;
@@ -75,7 +76,8 @@ h1 {
 }
 
 .result {
-    height: 90px;
+    min-height: 46px;
+    max-height: fit-content;
 }
 
 input {
@@ -84,14 +86,14 @@ input {
 
 ::placeholder, span {
     color: rgba(245, 245, 245, 0.5);
-    font-size: 0.75rem;
+    font-size: 0.80rem;
     font-weight: 300;
 }
 
 .submit.button {
     background-color: #6c63ff;
     color: #1A1A40;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     width: 100%;
 }
@@ -99,7 +101,8 @@ input {
 .reset.button {
     background-color: transparent;
     color: #6c63ff;
-    font-weight: 400;
+    font-size: 0.85rem;
+    font-weight: 500;
     width: 100%;
 }
 
