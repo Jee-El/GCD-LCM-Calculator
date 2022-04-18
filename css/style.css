@@ -1,23 +1,24 @@
 * {
+    border: none;
     box-sizing: border-box;
     font-family: Poppins, helvetica, sans-serif;
     margin: 0;
+    outline: none;
     padding: 0;
     text-decoration: none;
-    border: none;
-    outline: none;
 }
 body {
+    background-color: #1A1A40;
     position: relative;
 }
 
 .main-container {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background: #1A1A40;
-    min-height: 100vh;
+    margin-bottom: auto;
+    min-height: calc(100vh + 50px);
 }
 
 .sub-container {
