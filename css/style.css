@@ -140,7 +140,7 @@ footer {
     display: flex;
     height: 50px;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     width: 100%;
 }
 
