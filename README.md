@@ -3,7 +3,7 @@
 ## Link
 https://jee-el.github.io/Euclidean-Algorithm/
 
-**Try** : findGCD(9007199254740991, 7199254740991) . The first argument is the greatest (safe) integer in Javascript, and yet it finds the GCD almost immediately :D.
+**Try** : 9007199254740991 & 7199254740991. The first integer is the greatest (safe) integer in Javascript, and yet it finds the GCD almost immediately :D.
 
 ## Why I chose Euclide's algorithm
 Ever since we studied the GCD and the Euclidean algorithm at school, I've been wondering about what it would look like in a programming language, that is because I'd often come across the word *algorithm* in programming communities. As I've been learning the basics of javascript lately, I thought I'd try to code it in js.
