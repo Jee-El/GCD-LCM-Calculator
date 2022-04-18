@@ -17,8 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: auto;
-    min-height: calc(100vh + 50px);
+    min-height: 100vh;
 }
 
 .sub-container {
