@@ -132,3 +132,28 @@ input {
     letter-spacing: 0.03rem;
     margin: 1.5rem 0 0.8rem;
 }
+
+footer {
+    align-items: center;
+    background: rgb(33, 33, 82);
+    bottom: 0;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+}
+
+footer h4 {
+    color: #f5f5f5;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.08rem;
+    text-transform: capitalize;
+}
+
+footer > h4 > .icon-heart {
+    color: #FA58B6;
+    font-size: 0.75rem;
+    margin: 0 0.1rem;
+}
