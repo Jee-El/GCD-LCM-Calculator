@@ -29,15 +29,13 @@ body {
 }
 
 .main-container {
-    background-color: rgb(33, 33, 82);
     border-radius: 10px;
     display: flex;
     flex-flow: column nowrap;
-    height: 350px;
+    height: 280px;
     justify-content: space-between;
-    max-width: 400px;
-    padding: 2rem;
-    width: 82%;
+    max-width: 310px;
+    width: 80%;
 }
 
 h1 {
@@ -49,17 +47,16 @@ h1 {
     max-width: 400px;
     padding: 2rem;
     text-align: center;
-    width: 86%;
+    width: 95%;
 }
 
 .sub-container {
     flex-flow: column nowrap;
-    width: 100%;
     flex-grow: 1;
 }
 
 .result, input, .button {
-    background-color: rgb(33, 33, 82);
+    background-color: transparent;
     border: 2px solid #6c63ff;
     border-radius: 3px;
     color: rgba(245, 245, 245, 0.9);
