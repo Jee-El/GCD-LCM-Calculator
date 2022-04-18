@@ -8,34 +8,23 @@
     outline: none;
 }
 
-body, .sub-container, .result, .inputs, .options {
-    align-items: center;
+.main-container {
     display: flex;
-}
-
-.inputs {
-    flex-flow: row nowrap;
-}
-
-.sub-container, .inputs {
-    justify-content: space-between;
-}
-
-body {
-    background-color: #1A1A40;
-    flex-flow: column nowrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background: #1A1A40;
     min-height: 100vh;
 }
 
-.main-container {
-    border-radius: 10px;
+.sub-container {
     display: flex;
-    flex-flow: column nowrap;
-    height: 280px;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     max-width: 310px;
-    width: 80%;
+    width: 70%;
+    height: 360px;
 }
 
 h1 {
@@ -44,18 +33,15 @@ h1 {
     font-weight: 500;
     letter-spacing: 0.03rem;
     line-height: 1.4rem;
-    max-width: 400px;
     padding: 2rem;
     text-align: center;
     width: 95%;
+    max-width: 380px;
 }
 
-.sub-container {
-    flex-flow: column nowrap;
-    flex-grow: 1;
-}
-
-.result, input, .button {
+.result, input, button {
+    display: flex;
+    align-items: center;
     background-color: transparent;
     border: 2px solid #6c63ff;
     border-radius: 3px;
@@ -66,41 +52,45 @@ h1 {
     justify-content: center;
     padding: 0.6rem;
     text-align: center;
-}
-
-.result, .inputs {
-    width: 100%;
+    min-height: 46px;
+    max-height: fit-content;
 }
 
 .result {
-    min-height: 46px;
-    max-height: fit-content;
+    width: 100%;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 input {
     width: 46%;
 }
 
-::placeholder, span {
-    color: rgba(245, 245, 245, 0.5);
-    font-size: 0.80rem;
-    font-weight: 300;
+.button {
+    width: 100%;
 }
-
-.submit.button {
+.button.submit {
     background-color: #6c63ff;
     color: #1A1A40;
     font-size: 0.95rem;
     font-weight: 700;
-    width: 100%;
 }
 
-.reset.button {
+.button.reset {
     background-color: transparent;
     color: #6c63ff;
     font-size: 0.85rem;
     font-weight: 500;
-    width: 100%;
+}
+
+::placeholder, span {
+    color: rgba(245, 245, 245, 0.5);
+    font-size: 0.80rem;
+    font-weight: 300;
 }
 
 .icons {
@@ -130,7 +120,6 @@ input {
     text-decoration-line: underline;
     font-size: 0.8rem;
     letter-spacing: 0.03rem;
-    margin: 1.5rem 0 0.8rem;
 }
 
 footer {
@@ -140,7 +129,7 @@ footer {
     display: flex;
     height: 50px;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     width: 100%;
 }
 
@@ -153,7 +142,7 @@ footer h4 {
 }
 
 footer > h4 > .icon-heart {
-    color: #FA58B6;
+    color: #6c63ff;
     font-size: 0.75rem;
     margin: 0 0.1rem;
 }
