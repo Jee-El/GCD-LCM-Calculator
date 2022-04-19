@@ -8,16 +8,17 @@ although r would have to be equal to a. So I wrote an else..if statement to make
 // The forward slash means "divides".
 
 const result = document.querySelector('p');
+const firstInput = document.getElementById('firstInput');
+firstInput.focus();
+const secondInput = document.getElementById('secondInput');
 const submit = document.querySelector('.submit.button');
-const reset = document.querySelector('.reset.button')
+const reset = document.querySelector('.reset.button');
 
 submit.addEventListener('click', () => {
-    const firstInput = document.getElementById('firstInput').value;
-    const secondInput = document.getElementById('secondInput').value;
-    if (firstInput.trim() === '' || secondInput.trim() === '') {
+    if (firstInput.value.trim() === '' || secondInput.value.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
-    checkForSafeNonNullInteger(+firstInput, +secondInput);
+    checkForSafeNonNullInteger(+firstInput.value, +secondInput.value);
 });
 
 reset.addEventListener('click', () => {
