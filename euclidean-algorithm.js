@@ -8,22 +8,21 @@ although r would have to be equal to a. So I wrote an else..if statement to make
 // The forward slash means "divides".
 
 const result = document.querySelector('p');
-const firstInput = document.getElementById('firstInput');
-firstInput.focus();
-const secondInput = document.getElementById('secondInput');
+const input = document.querySelectorAll('input');
+input[0].focus();
 const submit = document.querySelector('.submit.button');
 const reset = document.querySelector('.reset.button');
 
 submit.addEventListener('click', () => {
-    if (firstInput.value.trim() === '' || secondInput.value.trim() === '') {
+    if (input[0].value.trim() === '' || input[1].value.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
-    checkForSafeNonNullInteger(+firstInput.value, +secondInput.value);
+    checkForSafeNonNullInteger(+input[0].value, +input[1].value);
 });
 
 reset.addEventListener('click', () => {
-    firstInput.value = '';
-    secondInput.value = '';
+    input[0].value = '';
+    input[1].value = '';
     result.textContent = '';
 })
 
@@ -32,7 +31,10 @@ function checkForSafeNonNullInteger(a, b) {
     if ( !Number.isSafeInteger(a) || !Number.isSafeInteger(b)) {
         return result.textContent = `Input must be two integers, each between -(2^53 - 1) and (2^53 - 1)`;
     }
-    if ( a === 0 && b === 0) return result.textContent = `At least one integer should be non-null`;
+    if ( a === 0 && b === 0) {
+        return result.textContent = `At least one integer should be non-null`;
+    }
+
     return findGCD(a, b);
 }
 

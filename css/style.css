@@ -1,12 +1,13 @@
 * {
-    border: none;
     box-sizing: border-box;
-    font-family: Poppins, helvetica, sans-serif;
     margin: 0;
-    outline: none;
     padding: 0;
-    text-decoration: none;
 }
+
+html {
+    font-family: Poppins, helvetica, sans-serif;
+}
+
 body {
     background-color: #1A1A40;
     width: 100%;
@@ -21,13 +22,13 @@ body {
 }
 
 .sub-container {
+    align-items: center;
     display: flex;
     flex-direction: column;
+    height: 360px;
     justify-content: space-between;
-    align-items: center;
     max-width: 310px;
     width: 70%;
-    height: 360px;
 }
 
 h1 {
@@ -36,27 +37,27 @@ h1 {
     font-weight: 500;
     letter-spacing: 0.03rem;
     line-height: 1.4rem;
+    max-width: 380px;
     padding: 2rem;
     text-align: center;
     width: 95%;
-    max-width: 380px;
 }
 
 .result, input, button {
-    display: flex;
     align-items: center;
     background-color: transparent;
     border: 2px solid #6c63ff;
     border-radius: 3px;
     color: rgba(245, 245, 245, 0.9);
+    display: flex;
     font-size: 0.80rem;
     font-weight: 500;
-    letter-spacing: 0.1rem;
     justify-content: center;
+    letter-spacing: 0.1rem;
+    max-height: fit-content;
+    min-height: 46px;
     padding: 0.6rem;
     text-align: center;
-    min-height: 46px;
-    max-height: fit-content;
 }
 
 .result {
@@ -70,20 +71,21 @@ h1 {
 }
 
 input {
+    outline: none;
     width: 46%;
 }
 
-.button {
+button {
     width: 100%;
 }
-.button.submit {
+button[type="submit"] {
     background-color: #6c63ff;
     color: #1A1A40;
     font-size: 0.95rem;
     font-weight: 700;
 }
 
-.button.reset {
+button[type="reset"] {
     background-color: transparent;
     color: #6c63ff;
     font-size: 0.85rem;
@@ -120,7 +122,6 @@ input {
 
 .gcd-wiki {
     color: rgba(245, 245, 245, 0.9);
-    text-decoration-line: underline;
     font-size: 0.8rem;
     letter-spacing: 0.03rem;
 }
