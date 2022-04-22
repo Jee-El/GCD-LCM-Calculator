@@ -10,8 +10,8 @@ although r would have to be equal to a. So I wrote an else..if statement to make
 const result = document.querySelector('p');
 const input = document.querySelectorAll('input');
 input[0].focus();
-const submit = document.querySelector('.submit.button');
-const reset = document.querySelector('.reset.button');
+const submit = document.querySelector('button[type="submit"]');
+const reset = document.querySelector('button[type="reset"]');
 
 submit.addEventListener('click', () => {
     if (input[0].value.trim() === '' || input[1].value.trim() === '') {
