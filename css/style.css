@@ -100,11 +100,7 @@ button[type="reset"] {
 }
 
 .icons {
-    align-items: flex-end;
-    display: flex;
-    flex-flow: row nowrap;
     font-size: 1.12rem;
-    justify-content: center;
 }
 
 .icons a {
