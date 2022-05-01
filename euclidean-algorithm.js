@@ -14,6 +14,7 @@ const submit = document.querySelector('button[type="submit"]');
 const reset = document.querySelector('button[type="reset"]');
 
 submit.addEventListener('click', () => {
+    result.classList.remove('greyed-out');
     if (input[0].value.trim() === '' || input[1].value.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
@@ -23,7 +24,8 @@ submit.addEventListener('click', () => {
 reset.addEventListener('click', () => {
     input[0].value = '';
     input[1].value = '';
-    result.textContent = '';
+    result.textContent = 'The GCD will be shown here!';
+    result.classList.add('greyed-out');
 })
 
 function checkForSafeNonNullInteger(a, b) {
