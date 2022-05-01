@@ -46,8 +46,8 @@ h1 {
 .result, input, button {
     align-items: center;
     background-color: transparent;
-    border: 2px solid #6c63ff;
-    border-radius: 3px;
+    border: none;
+    border-bottom: 2px solid #6c63ff;
     color: rgba(245, 245, 245, 0.9);
     display: flex;
     font-size: 0.80rem;
@@ -55,8 +55,8 @@ h1 {
     justify-content: center;
     letter-spacing: 0.1rem;
     max-height: fit-content;
-    min-height: 46px;
-    padding: 0.6rem;
+    min-height: 35px;
+    padding: 0.2rem;
     text-align: center;
 }
 
@@ -75,8 +75,13 @@ input {
     width: 46%;
 }
 
+input:focus {
+    border-bottom: 2px solid #f5f5f5;
+}
+
 button {
     cursor: pointer;
+    height: 46px;
     width: 100%;
 }
 button[type="submit"] {
@@ -88,31 +93,32 @@ button[type="submit"] {
 
 button[type="reset"] {
     background-color: transparent;
+    border: 2px solid #6c63ff;
     color: #6c63ff;
     font-size: 0.85rem;
     font-weight: 500;
 }
 
-::placeholder, span {
+::placeholder, .greyed-out {
     color: rgba(245, 245, 245, 0.5);
     font-size: 0.80rem;
     font-weight: 300;
 }
 
 .icons {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
     font-size: 1.12rem;
+    justify-content: center;
 }
 
-.icons a {
+.icons > a {
     color: #f5f5f5;
-    transition: all 0.4ms ease-in-out;
+    transition: all 100ms ease-in-out;
 }
 
-.icons a:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.icons a:hover {
+.icons > a:hover {
     color: #6c63ff;
     transform: scale(1.3);
 }
