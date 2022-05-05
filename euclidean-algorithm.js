@@ -21,6 +21,15 @@ submit.addEventListener('click', () => {
     checkForSafeNonNullInteger(+input[0].value, +input[1].value);
 });
 
+document.addEventListener('keydown', (e) => {
+    if (e.keyCode !== 13) return;
+    result.classList.remove('greyed-out');
+    if (input[0].value.trim() === '' || input[1].value.trim() === '') {
+        return result.textContent = `Please fill both the integer fields`;
+    }
+    checkForSafeNonNullInteger(+input[0].value, +input[1].value);
+});
+
 reset.addEventListener('click', () => {
     input[0].value = '';
     input[1].value = '';
