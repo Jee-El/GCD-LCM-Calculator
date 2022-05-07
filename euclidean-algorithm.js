@@ -18,7 +18,7 @@ submit.addEventListener('click', () => {
     if (input[0].value.trim() === '' || input[1].value.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
-    checkForSafeNonNullInteger(+input[0].value, +input[1].value);
+    checkForValidInput(+input[0].value, +input[1].value);
 });
 
 document.addEventListener('keydown', (e) => {
@@ -27,17 +27,17 @@ document.addEventListener('keydown', (e) => {
     if (input[0].value.trim() === '' || input[1].value.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
-    checkForSafeNonNullInteger(+input[0].value, +input[1].value);
+    checkForValidInput(+input[0].value, +input[1].value);
 });
 
 reset.addEventListener('click', () => {
     input[0].value = '';
     input[1].value = '';
-    result.textContent = 'The GCD will be shown here!';
+    result.textContent = 'The GCD is shown here!';
     result.classList.add('greyed-out');
 })
 
-function checkForSafeNonNullInteger(a, b) {
+function checkForValidInput(a, b) {
     // Check if a & b are integers, both not null.
     if ( !Number.isSafeInteger(a) || !Number.isSafeInteger(b)) {
         return result.textContent = `Input must be two integers, each between -(2^53 - 1) and (2^53 - 1)`;
