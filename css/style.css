@@ -25,10 +25,9 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 360px;
-    justify-content: space-between;
-    max-width: 310px;
-    width: 70%;
+    justify-content: center;
+    height: fit-content;
+    width: 80%;
 }
 
 .result, input, button {
@@ -39,17 +38,18 @@ body {
     border-bottom: 2px solid #6c63ff;
     color: rgba(245, 245, 245, 0.9);
     display: flex;
-    font-size: 0.80rem;
+    font-size: 0.75rem;
     font-weight: 500;
     justify-content: center;
     letter-spacing: 0.1rem;
+    margin-bottom: 1.2rem;
     max-height: fit-content;
-    max-width: 300px;
     min-height: 37px;
-    min-width: fit-content;
-    padding: 0.5rem 0;
     text-align: center;
-    width: 230px;
+}
+.result, input {
+    min-width: 230px;
+    padding: 0.5rem 0 0.35rem;
 }
 input {
     outline: none;
@@ -60,7 +60,7 @@ input:focus {
 
 .buttons {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     width: 230px;
 }
@@ -68,27 +68,42 @@ button {
     border: none;
     border-radius: 2px;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
+    padding: 0.4rem 0;
     text-align: center;
     -webkit-appearance: none;
-    width: 100px;
 }
-button[type="submit"] {
+button[type="button"] {
     background-color: #6c63ff;
-    color: #1A1A40;
+    color: #000;
     font-weight: 700;
+    width: 105.4px;
 }
 button[type="reset"] {
     background-color: transparent;
     border: 2px solid #6c63ff;
     color: #6c63ff;
     font-weight: 500;
+    width: 100%;
 }
 
 ::placeholder, .greyed-out {
     color: rgba(245, 245, 245, 0.5);
     font-size: 0.80rem;
     font-weight: 300;
+}
+
+p, a {
+    color: rgba(245, 245, 245, 0.8);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.6rem;
+    text-align: center;
+}
+
+a {
+    padding: 0 0.25rem 0 0.5rem;
 }
 
 .icons {
@@ -105,13 +120,6 @@ button[type="reset"] {
 .icons > a:hover {
     color: #6c63ff;
     transform: scale(1.3);
-}
-
-p, a {
-    color: rgba(245, 245, 245, 0.9);
-    font-size: 0.8rem;
-    letter-spacing: 0.05rem;
-    text-align: center;
 }
 
 footer {
@@ -133,4 +141,10 @@ footer > h4 > .icon-heart {
     color: #6c63ff;
     font-size: 0.75rem;
     margin: 0 0.1rem;
+}
+
+@media (min-width: 1000px) {
+    .main-container {
+        min-height: calc(100vh - 50px);
+    }
 }
