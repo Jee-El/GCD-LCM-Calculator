@@ -42,8 +42,9 @@ resetBtn.addEventListener('click', () => {
 // check input, then call the function tied to the clicked button
 function checkForValidInput(a, b, e) {
     // Check if a & b are integers, both not null.
-    if ( !Number.isSafeInteger(a) || !Number.isSafeInteger(b)) {
-        return result.textContent = `Input must be two integers between -(2^53 - 1) and (2^53 - 1)`;
+    if ( !Number.isInteger(a) || !Number.isInteger(b) ||
+        a.toString().split('').length > 12 || b.toString().split('').length > 12) {
+        return result.textContent = `Entered numbers must be made of 12 digits or less.`;
     }
     if ( a === 0 && b === 0) {
         return result.textContent = `At least one integer should be non-null`;
