@@ -19,7 +19,9 @@ GCDBtn.addEventListener('click', (e) => {
     if (input[0].value.trim() === '' || input[1].value.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
-    checkForValidInput(+input[0].value, +input[1].value, e);
+    a = +input[0].value;
+    b = +input[1].value;
+    checkForValidInput(a, b, e);
 });
 
 // Get LCM when LCM button is clicked
@@ -28,7 +30,9 @@ LCMBtn.addEventListener('click', (e) => {
     if (input[0].value.trim() === '' || input[1].value.trim() === '') {
         return result.textContent = `Please fill both the integer fields`;
     }
-    checkForValidInput(+input[0].value, +input[1].value, e);
+    a = +input[0].value;
+    b = +input[1].value;
+    checkForValidInput(a, b, e);
 });
 
 // Clear input
@@ -71,6 +75,8 @@ function findGCD(a, b) {
 }
 
 function findLCM(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
     let GCD = findGCD(a, b);
     return result.textContent = (a * b) / GCD;
 }
