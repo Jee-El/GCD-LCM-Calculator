@@ -1,7 +1,7 @@
 # GCD & LCM Calculator
 
 ## Link
-https://jee-el.github.io/Euclidean-Algorithm/
+https://jee-el.github.io/GCD-LCM-Calculator/
 
 **Try** : 95474 & 2547401.
 
