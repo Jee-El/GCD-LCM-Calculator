@@ -13,29 +13,28 @@ const GCDBtn = document.querySelector('.GCD-button');
 const LCMBtn = document.querySelector('.LCM-button');
 const resetBtn = document.querySelector('button[type="reset"]');
 
+let firstOperand = null;
+let secondOperand = null;
+
 // Get GCD when GCD button is clicked
 GCDBtn.addEventListener('click', (e) => {
-	result.classList.remove('greyed-out');
-	if (input[0].value.trim() === '' || input[1].value.trim() === '') {
-		return (result.textContent = `Please fill both the integer fields`);
+	if (isNotValidInput(e)) {
+		result.textContent = isNotValidInput(e);
+		return;
 	}
-	a = +input[0].value;
-	b = +input[1].value;
-	checkForValidInput(a, b, e);
+	result.textContent = findGCD(firstOperand, secondOperand);
 });
 
 // Get LCM when LCM button is clicked
 LCMBtn.addEventListener('click', (e) => {
-	result.classList.remove('greyed-out');
-	if (input[0].value.trim() === '' || input[1].value.trim() === '') {
-		return (result.textContent = `Please fill both the integer fields`);
+	if (isNotValidInput(e)) {
+		result.textContent = isNotValidInput();
+		return;
 	}
-	a = +input[0].value;
-	b = +input[1].value;
-	checkForValidInput(a, b, e);
+	result.textContent = findLCM(firstOperand, secondOperand);
 });
 
-// Clear input
+// Clear input.
 resetBtn.addEventListener('click', () => {
 	input[0].value = '';
 	input[1].value = '';
@@ -43,44 +42,52 @@ resetBtn.addEventListener('click', () => {
 	result.classList.add('greyed-out');
 });
 
-// check input, then call the function tied to the clicked button
-function checkForValidInput(a, b, e) {
+// check input, then call the function tied to the clicked button.
+function isNotValidInput(e) {
+	result.classList.remove('greyed-out');
+	firstOperand = input[0].value;
+	secondOperand = input[0].value;
+	// Empty fields
+	if (input[0].value.trim() === '' || input[1].value.trim() === '') {
+		return `Integer fields must be filled`;
+	}
+	firstOperand = Math.abs(+input[0].value);
+	secondOperand = Math.abs(+input[1].value);
 	// Check if a & b are integers, both not null.
 	if (
-		!Number.isInteger(a) ||
-		!Number.isInteger(b) ||
-		a.toString().split('').length > 12 ||
-		b.toString().split('').length > 12
+		!Number.isInteger(firstOperand) ||
+		!Number.isInteger(secondOperand) ||
+		firstOperand.toString().length > 12 ||
+		secondOperand.toString().length > 12
 	) {
-		return (result.textContent = `Entered numbers must be made of 12 digits or less.`);
+		return `Input must be 12 digits or less.`;
 	}
-	if (a === 0 && b === 0) {
-		return (result.textContent = `At least one integer should be non-null`);
+	if (isGCD(e) && firstOperand === 0 && secondOperand === 0) {
+		return `One integer must be non-null`;
 	}
-	if (e.target.classList.contains('GCD-button')) return findGCD(a, b);
-	if (e.target.classList.contains('LCM-button')) return findLCM(a, b);
+}
+
+function isGCD(e) {
+	if (e.target.classList.contains('GCD-button')) return true;
 }
 
 function findGCD(a, b) {
-	a = Math.abs(a);
-	b = Math.abs(b);
 	// 0 % b = 0 but the absolute value of b is the GCD.
-	if (a === 0) return (result.textContent = b);
+	if (a === 0) return b;
 
 	// Check the second comment above for an explanation of this one.
 	if (b === 0) return findGCD(b, a);
 
 	// To end Euclide's algorithm.
 	if (a % b === 0) {
-		return (result.textContent = a > b ? b : a);
+		return a > b ? b : a;
 	}
 
 	return findGCD(b, a % b);
 }
 
 function findLCM(a, b) {
-	a = Math.abs(a);
-	b = Math.abs(b);
+	if (a === 0 || b === 0) return 0;
 	let GCD = findGCD(a, b);
-	return (result.textContent = (a * b) / GCD);
+	return (a * b) / GCD;
 }
