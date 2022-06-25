@@ -44,7 +44,6 @@ button {
 	align-items: center;
 	background-color: transparent;
 	border: none;
-	border-radius: 2px;
 	color: #fff;
 	display: flex;
 	font-size: 0.82rem;
@@ -52,9 +51,10 @@ button {
 	justify-content: center;
 	letter-spacing: 0.1rem;
 	margin-bottom: 1.2rem;
-	height: 40px;
+	height: 46px;
 	text-align: center;
 	outline: 3px solid #319f65;
+	outline-offset: -3px;
 	padding: 0.5rem 0;
 }
 
@@ -72,6 +72,7 @@ input {
 button {
 	cursor: pointer;
 	font-size: 0.85rem;
+	height: 40px;
 	text-align: center;
 	-webkit-appearance: none;
 }
@@ -90,12 +91,9 @@ button[type='reset'] {
 	width: 100%;
 }
 
-input:focus {
-	outline: 3px solid #f7cf07;
-}
+input:focus,
 button:focus {
 	outline: 3px solid #f7cf07;
-	outline-offset: -3px;
 }
 
 ::placeholder,
