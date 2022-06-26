@@ -17,18 +17,21 @@ let firstOperand = null;
 let secondOperand = null;
 
 // Get GCD when GCD button is clicked
-GCDBtn.addEventListener('click', (e) => {
-	if (isNotValidInput(e)) {
-		result.textContent = isNotValidInput(e);
+GCDBtn.addEventListener('click', () => {
+	isGCD = true;
+	invalidInputError = checkInput();
+	if (invalidInputError) {
+		result.textContent = invalidInputError;
 		return;
 	}
 	result.textContent = findGCD(firstOperand, secondOperand);
 });
 
 // Get LCM when LCM button is clicked
-LCMBtn.addEventListener('click', (e) => {
-	if (isNotValidInput(e)) {
-		result.textContent = isNotValidInput();
+LCMBtn.addEventListener('click', () => {
+	invalidInputError = checkInput();
+	if (invalidInputError) {
+		result.textContent = invalidInputError;
 		return;
 	}
 	result.textContent = findLCM(firstOperand, secondOperand);
@@ -43,14 +46,16 @@ resetBtn.addEventListener('click', () => {
 });
 
 // check input, then call the function tied to the clicked button.
-function isNotValidInput(e) {
+function checkInput() {
 	result.classList.remove('greyed-out');
+
 	firstOperand = input[0].value;
 	secondOperand = input[0].value;
 	// Empty fields
 	if (input[0].value.trim() === '' || input[1].value.trim() === '') {
 		return `Integer fields must be filled`;
 	}
+
 	firstOperand = Math.abs(+input[0].value);
 	secondOperand = Math.abs(+input[1].value);
 	// Check if a & b are integers, both not null.
@@ -62,13 +67,9 @@ function isNotValidInput(e) {
 	) {
 		return `Input must be 12 digits or less.`;
 	}
-	if (isGCD(e) && firstOperand === 0 && secondOperand === 0) {
+	if (isGCD && firstOperand === 0 && secondOperand === 0) {
 		return `One integer must be non-null`;
 	}
-}
-
-function isGCD(e) {
-	if (e.target.classList.contains('GCD-button')) return true;
 }
 
 function findGCD(a, b) {
@@ -79,9 +80,7 @@ function findGCD(a, b) {
 	if (b === 0) return findGCD(b, a);
 
 	// To end Euclide's algorithm.
-	if (a % b === 0) {
-		return a > b ? b : a;
-	}
+	if (a % b === 0) return Math.min(a, b);
 
 	return findGCD(b, a % b);
 }
