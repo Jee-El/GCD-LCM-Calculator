@@ -43,7 +43,8 @@ input,
 button {
 	align-items: center;
 	background-color: transparent;
-	border: none;
+	border: 3px solid #319f65;
+	border-radius: 3px;
 	color: #fff;
 	display: flex;
 	font-size: 0.82rem;
@@ -53,8 +54,6 @@ button {
 	margin-bottom: 1.2rem;
 	height: 46px;
 	text-align: center;
-	outline: 3px solid #319f65;
-	outline-offset: -3px;
 	padding: 0.5rem 0;
 }
 
@@ -80,7 +79,6 @@ button[type='button'] {
 	background-color: #319f65;
 	color: #fff;
 	font-weight: 700;
-	outline: none;
 	width: 47%;
 }
 button[type='reset'] {
@@ -93,7 +91,8 @@ button[type='reset'] {
 
 input:focus,
 button:focus {
-	outline: 3px solid #f7cf07;
+	border: 3px solid #f7cf07;
+	outline: none;
 }
 
 ::placeholder,
