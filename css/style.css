@@ -38,7 +38,7 @@ body {
 	width: 76%;
 }
 
-.result,
+output,
 input,
 button {
 	align-items: center;
@@ -57,7 +57,7 @@ button {
 	padding: 0.5rem 0;
 }
 
-.result,
+output,
 input {
 	width: 100%;
 }
