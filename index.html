@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#319f65" />
+		<meta name="theme-color" content="#2563eb" />
 		<meta
 			name="description"
 			content="Calculator of the Greatest Common Divisor & Lowest Common Multiple of two integers."
@@ -17,34 +17,42 @@
 		/>
 		<link rel="stylesheet" href="./css/style.css" />
 		<link rel="stylesheet" href="./css/fontello.css" />
-		<title>Greatest Common Divisor</title>
-		<script src="euclidean-algorithm.js" defer></script>
+		<script src="index.js" defer></script>
+		<title>GCD-LCM-Calculator</title>
 	</head>
 	<body>
-		<div class="main-container">
-			<div class="sub-container">
-				<input id="a" type="text" placeholder="Integer" autofocus />
-				<input id="b" type="text" placeholder="Integer" />
-				<output name="result" for="a b">The GCD/LCM is shown here!</output>
-
-				<div class="buttons">
-					<button type="button" class="GCD-button">Find GCD</button>
-					<button type="button" class="LCM-button">Find LCM</button>
-					<button type="reset">CLEAR</button>
-				</div>
-
-				<p>
-					<a href="https://en.wikipedia.org/wiki/Greatest_common_divisor">GCD</a
-					>is the Greatest Common Divisor.<br /><a
-						href="https://en.wikipedia.org/wiki/Least_common_multiple"
-						>LCM</a
-					>is the Lowest Common Multiple.
-				</p>
-			</div>
-		</div>
+		<form>
+			<ul>
+				<li>
+					<label for="first_integer">First Integer : <span aria-label="required">*</span></label>
+					<input type="tel" id="first_integer" name="first_integer" maxlength="12" placeholder="First Integer" required>
+				</li>
+				<li>
+					<label for="second_integer">Second Integer : <span aria-label="required">*</span></label>
+					<input type="tel" id="second_integer" name="second_integer" maxlength="12" placeholder="Second Integer" required>
+				</li>
+				<li>
+					<label for="result">Result :</label>
+					<input type="tel" id="result" name="result" placeholder="Result" readonly>
+				</li>
+				<li>
+					<ul>
+						<li>
+							<button type="button" class="GCD-button">Find GCD</button>
+						</li>
+						<li>
+							<button type="button" class="LCM-button">Find LCM</button>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<button type="reset">Clear</button>
+				</li>
+			</ul>
+		</form>
 		<footer>
 			<a href="https://github.com/Jee-El/GCD-LCM-Calculator"
-				>made with <span class="icon-heart"></span> by jee-el</a
+				>by jee-el</a
 			>
 		</footer>
 	</body>
